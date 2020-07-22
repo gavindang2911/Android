@@ -4,7 +4,10 @@ import androidx.appcompat.app.AppCompatActivity;
 
 import android.graphics.Typeface;
 import android.os.Bundle;
+import android.view.animation.Animation;
+import android.view.animation.AnimationUtils;
 import android.widget.Button;
+import android.widget.ImageView;
 import android.widget.TextView;
 
 public class MainActivity extends AppCompatActivity {
@@ -17,10 +20,21 @@ public class MainActivity extends AppCompatActivity {
         TextView titleWelcomeText = findViewById(R.id.tvSplash);
         TextView bodyWelcomeText = findViewById(R.id.tvSplash);
         Button btnStart = findViewById(R.id.btn_get_started);
+        ImageView imageWelcome = findViewById(R.id.imageWelcome);
+        // Load animation
+        Animation atg = AnimationUtils.loadAnimation(this, R.anim.alpha);
+        Animation atg2 = AnimationUtils.loadAnimation(this, R.anim.alpha2);
+        Animation atg3 = AnimationUtils.loadAnimation(this, R.anim.alpha3);
 
-        Typeface MLight = Typeface.createFromAsset(getAssets(), "fonts/MLight.tff");
-        Typeface MMedium = Typeface.createFromAsset(getAssets(), "fonts/MMedium.tff");
-        Typeface MRegular = Typeface.createFromAsset(getAssets(), "fonts/MRegular.tff");
+        imageWelcome.startAnimation(atg);
+        titleWelcomeText.startAnimation(atg2);
+        bodyWelcomeText.startAnimation(atg2);
+        btnStart.startAnimation(atg3);
+
+        // Import fonts
+        Typeface MLight = Typeface.createFromAsset(getAssets(), "fonts/MLight.ttf");
+        Typeface MMedium = Typeface.createFromAsset(getAssets(), "fonts/MMedium.ttf");
+        Typeface MRegular = Typeface.createFromAsset(getAssets(), "fonts/MRegular.ttf");
 
         titleWelcomeText.setTypeface(MRegular);
         bodyWelcomeText.setTypeface(MLight);
