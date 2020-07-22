@@ -2,8 +2,10 @@ package app.Stopwatch;
 
 import androidx.appcompat.app.AppCompatActivity;
 
+import android.content.Intent;
 import android.graphics.Typeface;
 import android.os.Bundle;
+import android.view.View;
 import android.view.animation.Animation;
 import android.view.animation.AnimationUtils;
 import android.widget.Button;
@@ -19,7 +21,7 @@ public class MainActivity extends AppCompatActivity {
 
         TextView titleWelcomeText = findViewById(R.id.tvSplash);
         TextView bodyWelcomeText = findViewById(R.id.tvSplash);
-        Button btnStart = findViewById(R.id.btn_get_started);
+        Button btnGetStarted = findViewById(R.id.btn_get_started);
         ImageView imageWelcome = findViewById(R.id.imageWelcome);
         // Load animation
         Animation atg = AnimationUtils.loadAnimation(this, R.anim.alpha);
@@ -29,7 +31,16 @@ public class MainActivity extends AppCompatActivity {
         imageWelcome.startAnimation(atg);
         titleWelcomeText.startAnimation(atg2);
         bodyWelcomeText.startAnimation(atg2);
-        btnStart.startAnimation(atg3);
+        btnGetStarted.startAnimation(atg3);
+        
+        
+        btnGetStarted.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Intent intent = new Intent(MainActivity.this, StopWatchActivity.class);
+                startActivity(intent);
+            }
+        });
 
         // Import fonts
         Typeface MLight = Typeface.createFromAsset(getAssets(), "fonts/MLight.ttf");
@@ -38,7 +49,7 @@ public class MainActivity extends AppCompatActivity {
 
         titleWelcomeText.setTypeface(MRegular);
         bodyWelcomeText.setTypeface(MLight);
-        btnStart.setTypeface(MMedium);
+        btnGetStarted.setTypeface(MMedium);
 
     }
 }
