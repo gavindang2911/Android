@@ -8,13 +8,11 @@
     tools:context=".MainActivity">
 
 
-
     <ImageView
         android:id="@+id/imageStopWatch"
-        android:layout_width="275dp"
-        android:layout_height="274dp"
-        android:layout_marginTop="60dp"
-        android:scaleType="centerCrop"
+        android:layout_width="276dp"
+        android:layout_height="247dp"
+        android:layout_marginTop="50dp"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.477"
         app:layout_constraintStart_toStartOf="parent"
@@ -23,15 +21,28 @@
 
     <ImageView
         android:id="@+id/imageAnchor"
-        android:layout_width="365dp"
-        android:layout_height="315dp"
-        android:layout_marginTop="40dp"
-        android:scaleType="centerCrop"
+        android:layout_width="358dp"
+        android:layout_height="358dp"
+        android:layout_marginStart="8dp"
+        android:layout_marginEnd="8dp"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.514"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
         app:srcCompat="@drawable/icanchor" />
+
+    <Chronometer
+        android:id="@+id/timerHere"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="8dp"
+        android:layout_marginTop="40dp"
+        android:layout_marginEnd="8dp"
+        android:textColor="#fff"
+        android:textSize="62sp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.497"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/imageStopWatch" />
 
     <Button
         android:id="@+id/btn_start"
@@ -39,7 +50,7 @@
         android:layout_height="55dp"
         android:layout_marginStart="8dp"
         android:layout_marginEnd="8dp"
-        android:layout_marginBottom="120dp"
+        android:layout_marginBottom="124dp"
         android:background="@drawable/backgroundbtn"
         android:text="Start Now"
         android:textColor="#fff"
@@ -57,15 +68,29 @@
         android:layout_marginStart="8dp"
         android:layout_marginEnd="8dp"
         android:layout_marginBottom="52dp"
-        android:background="@drawable/backgroundbtn"
+        android:background="@drawable/backgroundbtnred"
         android:text="Finish"
-        android:textColor="#fff"
+        android:textColor="#AF3555"
         android:textSize="20sp"
         android:textStyle="bold"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.495"
         app:layout_constraintStart_toStartOf="parent" />
+
+    <androidx.constraintlayout.widget.Guideline
+        android:id="@+id/guideline"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        app:layout_constraintGuide_begin="174dp" />
+
+    <androidx.constraintlayout.widget.Guideline
+        android:id="@+id/guideline2"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+        app:layout_constraintGuide_begin="205dp" />
 
 
 </androidx.constraintlayout.widget.ConstraintLayout>
