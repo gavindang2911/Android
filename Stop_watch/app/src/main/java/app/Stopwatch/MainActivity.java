@@ -20,7 +20,7 @@ public class MainActivity extends AppCompatActivity {
         setContentView(R.layout.activity_main);
 
         TextView titleWelcomeText = findViewById(R.id.tvSplash);
-        TextView bodyWelcomeText = findViewById(R.id.tvSplash);
+        TextView bodyWelcomeText = findViewById(R.id.subTvSplash);
         Button btnGetStarted = findViewById(R.id.btn_get_started);
         ImageView imageWelcome = findViewById(R.id.imageWelcome);
         // Load animation
@@ -47,7 +47,7 @@ public class MainActivity extends AppCompatActivity {
         Typeface MMedium = Typeface.createFromAsset(getAssets(), "fonts/MMedium.ttf");
         Typeface MRegular = Typeface.createFromAsset(getAssets(), "fonts/MRegular.ttf");
 
-        titleWelcomeText.setTypeface(MRegular);
+        titleWelcomeText.setTypeface(MMedium);
         bodyWelcomeText.setTypeface(MLight);
         btnGetStarted.setTypeface(MMedium);
 
